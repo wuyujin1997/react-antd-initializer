@@ -5,12 +5,16 @@
 
 - 启动
 
-`git clone https://github.com/wuyujin1997/react-antd-initializer.git`
-`cd react-antd-initializer`
-`npm install`
-`npm start`
+```bash
+git clone https://github.com/wuyujin1997/react-antd-initializer.git
+cd react-antd-initializer
+npm install
+npm start
+```
 
 - 编译运行
 
-`npm run build`
-`npx anywhere -d ./dist/`
+```bash
+npm run build
+npx anywhere -d ./dist/
+```
