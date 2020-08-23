@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/wuyujin1997/react-antd-initializer#readme",
   "dependencies": {
+    "css-loader": "^4.2.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "style-loader": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

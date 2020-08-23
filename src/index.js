@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './assets/css/index.css';
+// require('./assets/css/index.css');
+
 import icon3 from './assets/img/icon-3.png';
 import icon48 from './assets/img/icon-48.png';
 

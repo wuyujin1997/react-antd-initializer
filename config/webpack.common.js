@@ -53,6 +53,14 @@ module.exports = {
                     }
                 ]
             },
+            // 处理CSS资源
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                ]
+            },
         ]
     },
 

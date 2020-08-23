@@ -131,3 +131,11 @@ src/
 因为我准备的两张图片，`icon-3`是3KB，`icon-48`是48KB，而limit设置为`8192`，即8KB。
 即在编译结果中：小于8KB的icon-3会被编码到JS中，而大于8KB的icon-48会直接产出一个图片文件，以供请求。
 
+## 处理CSS
+
+`npm install --save-dev css-loader style-loader`
+编辑`webpack.common.js`，配置loader
+
+在`./src/assets/css/`中新建`index.css`，编辑。
+在`./src/index.js`中引入该样式文件(`import`或`require`两种方式皆可)。
+启动测试。
