@@ -41,4 +41,9 @@ module.exports = {
         ]
     },
 
+    // 插件配置
+    plugins: [
+        new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    ],
+
 };

@@ -57,3 +57,9 @@ react-antd-initializer/
 - 编辑`package.json`中的`scripts`内容，新增`start`和`build`脚本命令。
 脚本的名字可以自己起，运行的时候对应即可。
 
+## HTML模板
+
+`mkdir public && cd public`
+新建`index.html`，编辑(这个文件作为`html-webpack-plugin`插件要读取的模板)。
+
+修改`webpack.common.js`，添加`html-webpack-plugin`插件配置。
