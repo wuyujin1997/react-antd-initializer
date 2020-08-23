@@ -23,3 +23,37 @@ webpack相关：
 
 babel相关：
 `npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react`
+
+
+## 初始化webpack配置
+
+- 关于webpack的配置文件(这一步可以跳过)
+
+全局安装webpack后，运行`webpack --help`可以看到所有该命令的选项，其中：
+```
+--config    Path to the config file
+            [字符串] [默认值: webpack.config.js or webpackfile.js]
+```
+也就是说webpack会默认读取项目根目录下名为`webpack.config.js`或`webpackfile.js`的文件作为配置文件。
+当然也可以通过`--config`自行指定配置文件的路径。
+我选**自己指定配置文件路径**这种方式。
+
+- 新建配置目录
+
+`mkdir config && cd config`
+在`config`目录中新建三个配置文件，层次如下：
+```
+react-antd-initializer/
+    config/
+        webpack.common.js
+        webpack.dev.js
+        webpack.prod.js
+```
+其中webpack的大部分配置项会写在`webpack.common.js`。
+其他两个配置文件分别先引入这个通用配置，然后做各自环境下针对性的配置。
+
+- 编辑webpack的三份配置文件
+
+- 编辑`package.json`中的`scripts`内容，新增`start`和`build`脚本命令。
+脚本的名字可以自己起，运行的时候对应即可。
+

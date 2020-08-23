@@ -4,6 +4,8 @@
   "description": "基于NodeJS，Webpack配置，搭建React的开发环境，并集成AntDesign组件库。",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config config/webpack.dev.js --open",
+    "build": "webpack --config config/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
