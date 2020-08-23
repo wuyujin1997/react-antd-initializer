@@ -139,3 +139,18 @@ src/
 在`./src/assets/css/`中新建`index.css`，编辑。
 在`./src/index.js`中引入该样式文件(`import`或`require`两种方式皆可)。
 启动测试。
+
+## 使用Antd组件库
+
+安装依赖 `npm install --save antd`
+
+新建目录及文件 `./src/components/AntDesignDemo.js`
+编辑该组件文件的代码(注意样式文件的引入`import 'antd/dist/antd.css';`)。
+
+编辑`./src/index.js`中渲染的组件element，修改为刚刚编写的`AntDesignDemo`。
+启动测试。
+
+antd的样式文件可以在每个自己编写的组件中都引入一次，
+也可以在`./src/index.js`中只引入一次(推荐)。
+
+

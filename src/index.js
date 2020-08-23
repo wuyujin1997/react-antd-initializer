@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// 为避免每编写一个组件都要引入antd的样式文件，在入口处引入一次即可。
+import 'antd/dist/antd.css';
+
 import './assets/css/index.css';
 // require('./assets/css/index.css');
 
 import icon3 from './assets/img/icon-3.png';
 import icon48 from './assets/img/icon-48.png';
+
+import AntDesignDemo from './components/AntDesignDemo';
 
 // 将要被渲染的组件(HTML 标签代码块)
 var element = (
@@ -16,6 +21,8 @@ var element = (
         <img src={icon48}/>
     </div>
 );
+
+element = ( <AntDesignDemo />);
 
 // 获取 DOM 中的节点作为父容器
 const container = document.getElementById('root');
