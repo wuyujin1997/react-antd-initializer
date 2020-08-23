@@ -38,6 +38,21 @@ module.exports = {
                     }
                 }
             },
+            // 处理图片资源
+            {
+                test: /\.(png|jpg|gif)/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                            useRelativePath: process.env.NODE_ENV === 'production',
+                            limit: 8192,    // 8KB以内的图片会被转换为Base64编码到JS文件中
+                            fallback: 'file-loader' // 大于limit的图片，用fallback指定的loader程序处理
+                        }
+                    }
+                ]
+            },
         ]
     },
 

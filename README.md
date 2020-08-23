@@ -92,3 +92,42 @@ npm install -g anywhere # 安装全局 anywhere (一种静态资源服务器)
 anywhere -d ./dist      # 指定目录，提供静态资源服务
 ```
 对编译结果的运行(见上)操作，就相当于我们`run start`看到的结果。
+
+## 处理图片资源
+
+因为 webpack 默认只能处理普通版本的JS。
+其他类型的资源(如高版本JS，图片，样式文件CSS、Less等)都需要引入对应的`loader`程序进行解析处理。
+
+- 安装依赖
+
+`npm install --save-dev file-loader url-loader`
+编辑`webpack.common.js`，配置相关loader。
+
+
+
+- 新建目录：
+
+`cd src && mkdir assets && cd assets && mkdir img && mkdir css`
+建好的目录结构如下：
+```
+src/
+    assets/
+        img/
+        css/
+```
+复制任意两张图片至`./src/assets/img/`中。
+
+编辑`./src/index.js`，引入图片资源，有两种引入方式：
+    1. 使用CDN(即直接通过图片完整的URL引用)，这种是不需要配置的。
+    2. 使用ES6模块标准语法，`import 变量名 from '资源路径'`，然后使用这个变量即可。
+
+- 测试`url-loader`对图片资源引入策略的优化
+
+在`webpack.common.js`中配置了`url-loader`的`limit`选项。
+作用是当引入的图片资源不足limit时，直接将该图片按Base64编码到JS代码中(以减少HTTP请求次数)
+而大于limit的图片会提供请求URL，而不“嵌入”到JS中(以减少JS文件的大小，减少JS加载时间)。
+
+运行`npm run build`，观察`./dist/`目录。
+因为我准备的两张图片，`icon-3`是3KB，`icon-48`是48KB，而limit设置为`8192`，即8KB。
+即在编译结果中：小于8KB的icon-3会被编码到JS中，而大于8KB的icon-48会直接产出一个图片文件，以供请求。
+

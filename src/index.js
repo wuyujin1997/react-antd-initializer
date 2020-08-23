@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import icon3 from './assets/img/icon-3.png';
+import icon48 from './assets/img/icon-48.png';
+
 // 将要被渲染的组件(HTML 标签代码块)
 var element = (
     <div>
         <h2>hello 世界</h2>
+        <img src="https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico" alt="支付宝icon"/>
+        <img src={icon3}/>
+        <img src={icon48}/>
     </div>
 );
 
