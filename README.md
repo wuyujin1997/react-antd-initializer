@@ -63,3 +63,32 @@ react-antd-initializer/
 新建`index.html`，编辑(这个文件作为`html-webpack-plugin`插件要读取的模板)。
 
 修改`webpack.common.js`，添加`html-webpack-plugin`插件配置。
+
+## 源代码目录
+
+`mkdir src && cd src`
+新建`index.js`，编辑代码(核心就是对`ReactDOM.render(element, container)`方法的测试)。
+
+
+## 运行 && 编译
+
+- 运行测试
+
+运行`npm start`，如果窗口没有红色的报错内容，页面正常显示内容(且浏览器`F12-console`没有报错)，
+则运行成功。
+
+- 编译测试
+
+运行`npm run build`，会生产`dist/`目录，其中有`index.html`和生成的JS文件。
+这个过程会**编译**(按规则转换文件内容)、**压缩**(就是把多个零散的碎片文件打包到一起)。
+
+编译结果的所有静态资源，就可以作为项目的产出，部署到服务器上提供服务。
+
+使用`anywhere`测试一下(一种静态资源服务器)
+```javascript
+npm run build   # 执行编译命令，输出静态资源到 ./dist/ 目录
+
+npm install -g anywhere # 安装全局 anywhere (一种静态资源服务器)
+anywhere -d ./dist      # 指定目录，提供静态资源服务
+```
+对编译结果的运行(见上)操作，就相当于我们`run start`看到的结果。
